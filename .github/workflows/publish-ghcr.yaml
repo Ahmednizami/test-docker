@@ -7,7 +7,7 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      packages: write
     steps:
       - uses: actions/checkout@v3
       - name: Build and Publish Image
