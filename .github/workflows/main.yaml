@@ -4,13 +4,14 @@ on:
   [workflow_dispatch]
 
 jobs: 
-  build_and_publish:
+  publish_image:
     runs_on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: build
         run: |
+          docker login --username Ahmednizami --password ${{ secrets.GH }}
           docker build . -t ahmednizami/hello-docker:latest
       - name: publish
         run: |
