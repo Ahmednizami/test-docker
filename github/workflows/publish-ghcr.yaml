@@ -1,0 +1,15 @@
+name: Docker Image CLI for GHCR
+
+on:
+  push
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and Publish Image
+        run: |
+          docker login --username Ahmednizami --password ${{ secrets.GH }} ghcr.io
+          docker build . -t ghcr.io/test-docker/test-file:latest
+          docker push ghcr.io/test-docker/test-file:latest
