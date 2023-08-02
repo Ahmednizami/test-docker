@@ -1,9 +1,8 @@
-From alpine
+FROM ubuntu:latest
 
-RUN apk add --no-cache bash
+RUN apt-get update
 
 WORKDIR /app
-
 COPY entrypoint.sh .
 
 ENTRYPOINT ["/app/entrypoint.sh"]
