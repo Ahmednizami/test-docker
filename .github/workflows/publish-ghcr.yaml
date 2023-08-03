@@ -14,5 +14,5 @@ jobs:
       - name: Build and Publish Image
         run: |
           docker login --username Ahmednizami --password ${{ secrets.GH  }} ghcr.io
-          docker build . -t ghcr.io/test-docker/test-file:latest
-          docker push ghcr.io/test-docker/test-file:latest
+          docker build . -t ghcr.io/ahmednizami/test-file:latest
+          docker push ghcr.io/ahmednizami/test-file:latest
